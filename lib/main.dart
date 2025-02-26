@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         ),
         body: Center(
           child: Text(
-            'Hello, My Name is Nouman!', // Replace [Your Name] with your actual name
+            'Hello, My Name is Anique!', // Replace [Your Name] with your actual name
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
         ),
