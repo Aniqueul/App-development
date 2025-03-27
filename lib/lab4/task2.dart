@@ -5,6 +5,8 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -40,8 +42,8 @@ class MyApp extends StatelessWidget {
                     onPressed: () {
                       print('Cancel Pressed!');
                     },
-                    child: Text('Cancel'),
                     style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                    child: Text('Cancel'),
                   ),
                 ],
               ),
