@@ -1,64 +1,51 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ProfileCardApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+class ProfileCardApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Counter App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const CounterScreen(),
-    );
-  }
-}
-
-class CounterScreen extends StatefulWidget {
-  const CounterScreen({super.key});
-
-  @override
-  State<CounterScreen> createState() => _CounterScreenState();
-}
-
-class _CounterScreenState extends State<CounterScreen> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Counter App'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pressed the button this many times:',
-              style: TextStyle(fontSize: 18),
+      home: Scaffold(
+        backgroundColor: Colors.grey[200],
+        body: Center(
+          child: Container(
+            width: 300,
+            padding: EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(16),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.shade400,
+                  blurRadius: 8,
+                  offset: Offset(4, 4),
+                ),
+              ],
             ),
-            Text(
-              '$_counter',
-              style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                CircleAvatar(
+                  radius: 40,
+                  backgroundImage: AssetImage('assets/Screenshot 2025-03-12 215825.png'),
+                ),
+                SizedBox(height: 12),
+                Text(
+                  'Anique ul hassan',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 8),
+                Text(
+                  'Flutter Developer & Tech Enthusiast',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 14, color: Colors.grey[700]),
+                ),
+              ],
             ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: _incrementCounter,
-              child: const Text('Increment Counter'),
-            ),
-          ],
+          ),
         ),
       ),
     );
